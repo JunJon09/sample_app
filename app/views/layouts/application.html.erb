@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SampleApp</title>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title> <!-- yieldと書かれているとこに代入する-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
