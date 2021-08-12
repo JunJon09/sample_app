@@ -17,7 +17,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     #assert_selectは特定の中に存在するかの有無を確認
     #今回ならtitleにHome | Ruby on Rails Tutorial Sample Appがあるか
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get help" do
