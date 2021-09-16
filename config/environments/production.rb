@@ -16,7 +16,7 @@ Rails.application.configure do
   
    config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://young-inlet-59595.herokuapp.herokuapp.com'
+  host = 'https://young-inlet-59595.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
