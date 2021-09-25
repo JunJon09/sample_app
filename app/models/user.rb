@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   #validatesはデータが本当にそれで良いのかを確認するメソッド
   #presenceはそれが空かどうかを確認している。
@@ -69,6 +69,12 @@ class User < ApplicationRecord
    # パスワード再設定の期限が切れている場合はtrueを返す
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+  
+  # 試作feedの定義
+  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   
