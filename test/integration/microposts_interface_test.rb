@@ -24,6 +24,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
       post microposts_path, params: { micropost:
                                       { content: content, image: image } }
     end
+    # エラーがでるから消した。
     # assert assigns(:micropost).picture?
     follow_redirect!
     assert_match content, response.body
